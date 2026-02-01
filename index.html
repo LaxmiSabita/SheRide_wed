@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideHer - Safe Rides by Women, for Women</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #FF66B2;
+            --secondary: #FF99CC;
+            --accent: #CC0066;
+            --light: #FFF0F5;
+            --dark: #660033;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .font-logo {
+            font-family: 'Dancing Script', cursive;
+        }
+        
+        .emergency-btn {
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(204, 0, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(204, 0, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(204, 0, 102, 0); }
+        }
+        
+        .driver-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 0, 51, 0.1);
+        }
+        
+        .map-container {
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .city-selector .city {
+            transition: all 0.3s ease;
+        }
+        
+        .city-selector .city:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .subscription-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(102, 0, 51, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="font-logo text-3xl text-pink-600 font-bold">RideHer</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>Home</b></a>
+                    <a href="#safety" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>Safety</b></a>
+                    <a href="#how-it-works" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>How It Works</b></a>
+                    <a href="#subscription" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>Subscription</b></a>
+                    <a href="#drivers" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>Our Drivers</b></a>
+                    <a href="#cities" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-pink-600"><b>Cities</b></a>
+                </div>
+                <div class="flex items-center">
+                    <button class="bg-pink-600 text-white px-4 py-2 rounded-full font-medium hover:bg-pink-700 transition duration-200">
+                        Download App
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Safe Rides.<br>By Women.<br>For Women.</h1>
+                    <p class="text-xl mb-8">India's first all-women taxi service providing safe and comfortable rides with enhanced security features.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="bg-white text-pink-600 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition duration-200">
+                            Book Now
+                        </button>
+                        <button class="border-2 border-white text-white px-6 py-3 rounded-full font-medium hover:bg-white hover:text-pink-600 transition duration-200">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8be429fc-0a32-488a-8ef4-152b4db1ea2a.png" alt="Happy woman passenger in a pink taxi with a female driver, both smiling and looking at the camera" class="rounded-lg shadow-xl"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section id="safety" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Your Safety is Our Priority</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We've built multiple layers of protection into every ride
+                    <br><Small>Desinged By :</Small>
+                     <span class="font-logo text-3xl text-pink-600 font-bold">Laxmi S</span>
+                    
+            
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Emergency Button -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-exclamation-triangle text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Emergency Mode</h3>
+                    <p class="text-gray-600 mb-4">One-tap emergency button shares your ride details and live location with your trusted contacts.</p>
+                    <button class="emergency-btn bg-red-600 text-white px-4 py-2 rounded-full font-medium">
+                        Try Emergency Button
+                    </button>
+                </div>
+                
+                <!-- Verified Drivers -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Verified Women Drivers</h3>
+                    <p class="text-gray-600 mb-4">Every driver undergoes thorough background checks, training, and verification process.</p>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c7800384-d416-435c-9ad0-a33cd68edf17.png" alt="Close-up of female taxi driver smiling with ID badge visible" class="rounded-lg mt-4"/>
+                </div>
+                
+                <!-- Ride Tracking -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-map-marked-alt text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Real-time Tracking</h3>
+                    <p class="text-gray-600">Share your ride details with loved ones who can track your trip in real-time from start to finish.</p>
+                    <div class="map-container bg-gray-200 mt-4 flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6d41685d-205d-454f-998d-1ff5e35a4ff1.png" alt="Map interface showing live tracking of a taxi ride with safety features highlighted" class="w-full h-full object-cover"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">How RideHer Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Get where you need to go safely and effortlessly</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl font-bold text-pink-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Book Your Ride</h3>
+                    <p class="text-gray-600">Enter your destination and choose from nearby verified female drivers.</p>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a0fd8079-8015-43c4-b1b9-35fee78117bd.png" alt="Woman using smartphone app to book a ride with RideHer interface visible" class="mt-6 mx-auto rounded-lg"/>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl font-bold text-pink-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ride with Confidence</h3>
+                    <p class="text-gray-600">Track your driver's arrival and share ride details with emergency contacts.</p>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c6533f88-df47-4432-a92c-2cd931a504fc.png" alt="Woman comfortably seated in taxi with female driver, both visibly happy" class="mt-6 mx-auto"/>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <span class="text-3xl font-bold text-pink-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Arrive Safely</h3>
+                    <p class="text-gray-600">Rate your experience and enjoy cashless payment options.</p>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1aed6d8b-c49d-4bd8-9738-fcce08dd6dd6.png" alt="Woman arriving at destination, waving goodbye to female taxi driver" class="mt-6 mx-auto"/>
+                </div>
+            </div>
+            
+            <!-- Emergency Contact Setup -->
+            <div class="mt-20 bg-white rounded-xl shadow-md overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Set Up Emergency Contacts</h3>
+                        <p class="text-gray-600 mb-6">Add trusted contacts who will automatically receive your ride details and live location when you enable Emergency Mode.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user text-pink-600"></i>
+                                </div>
+                                <input type="text" placeholder="Contact Name" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-pink-600"></i>
+                                </div>
+                                <input type="tel" placeholder="Phone Number" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                            </div>
+                            <button class="bg-pink-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-pink-700 transition duration-200 w-full">
+                                Save Emergency Contact
+                            </button>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 bg-pink-50 flex items-center justify-center p-8">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6ffbb709-348f-445a-bde9-4f7619f2ff1b.png" alt="Smartphone screen showing emergency contact setup interface with safety features" class="rounded-lg shadow-md"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscription Plans -->
+    <section id="subscription" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Flexible Subscription Plans</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Save time and money with our recurring ride plans</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Weekly Plan -->
+                <div class="subscription-card bg-white border border-pink-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Weekly Commuter</h3>
+                        <p class="text-gray-600">Perfect for regular short trips</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-pink-600">₹999</span>
+                        <span class="text-gray-500">/week</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">10 rides per week</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Up to 5km per ride</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Priority booking</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">5% discount on additional rides</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-pink-100 text-pink-600 px-6 py-3 rounded-lg font-medium hover:bg-pink-200 transition duration-200">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Monthly Plan -->
+                <div class="subscription-card bg-white border-2 border-pink-400 rounded-xl p-8 shadow-sm hover:shadow-lg transition duration-300 transform scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        POPULAR
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Monthly Pro</h3>
+                        <p class="text-gray-600">Best for daily office commutes</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-pink-600">₹3,499</span>
+                        <span class="text-gray-500">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Unlimited rides (up to 5km each)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Set your regular schedule</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Dedicated driver option</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">10% discount on longer rides</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-pink-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-pink-700 transition duration-200">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Annual Plan -->
+                <div class="subscription-card bg-white border border-pink-200 rounded-xl p-8 shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="text-center mb-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Annual Unlimited</h3>
+                        <p class="text-gray-600">Maximum savings for frequent riders</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-pink-600">₹32,999</span>
+                        <span class="text-gray-500">/year</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Unlimited rides (up to 10km each)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">Personalized scheduling</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">VIP customer support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-pink-500 mr-2"></i>
+                            <span class="text-gray-700">15% discount on all rides</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-pink-100 text-pink-600 px-6 py-3 rounded-lg font-medium hover:bg-pink-200 transition duration-200">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Schedule Setup -->
+            <div class="mt-20 bg-pink-50 rounded-xl p-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Set Your Regular Schedule</h3>
+                    <p class="text-gray-600">With subscription plans, set your recurring rides once and your driver will arrive automatically.</p>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Days of Week</label>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="day-btn bg-pink-100 text-pink-600 px-4 py-2 rounded-full hover:bg-pink-200">Mon</button>
+                                <button class="day-btn bg-pink-100 text-pink-600 px-4 py-2 rounded-full hover:bg-pink-200">Tue</button>
+                                <button class="day-btn bg-pink-100 text-pink-600 px-4 py-2 rounded-full hover:bg-pink-200">Wed</button>
+                                <button class="day-btn bg-pink-100 text-pink-600 px-4 py-2 rounded-full hover:bg-pink-200">Thu</button>
+                                <button class="day-btn bg-pink-100 text-pink-600 px-4 py-2 rounded-full hover:bg-pink-200">Fri</button>
+                                <button class="day-btn bg-gray-100 text-gray-500 px-4 py-2 rounded-full hover:bg-gray-200">Sat</button>
+                                <button class="day-btn bg-gray-100 text-gray-500 px-4 py-2 rounded-full hover:bg-gray-200">Sun</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Pickup Time</label>
+                            <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                                <option>7:00 AM</option>
+                                <option>8:00 AM</option>
+                                <option>9:00 AM</option>
+                                <option>5:00 PM</option>
+                                <option>6:00 PM</option>
+                                <option>7:00 PM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Pickup Location</label>
+                            <input type="text" placeholder="Home/Office Address" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Destination</label>
+                            <input type="text" placeholder="Work/Home Address" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500">
+                        </div>
+                    </div>
+                    <button class="mt-6 bg-pink-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-pink-700 transition duration-200 w-full">
+                        Save Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Drivers -->
+    <section id="drivers" class="py-16 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet Our Drivers</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Highly trained and experienced women professionals</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <!-- Driver 1 -->
+                <div class="driver-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d43a5b40-da0f-4711-bc3d-06599950c8d1.png" alt="Professional female taxi driver in uniform standing by her car" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Priya Sharma</h3>
+                        <p class="text-pink-600 mb-3">4.9 ★ (1,240 rides)</p>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fas fa-car mr-2"></i>
+                            <span>Hyundai Creta</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Delhi NCR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Driver 2 -->
+                <div class="driver-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4d5aff6a-08f7-42b1-a7fa-d809c211308a.png" alt="Smiling female driver in pink uniform checking her phone for navigation" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Ananya Patel</h3>
+                        <p class="text-pink-600 mb-3">5.0 ★ (890 rides)</p>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fas fa-car mr-2"></i>
+                            <span>Tata Nexon EV</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Mumbai</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Driver 3 -->
+                <div class="driver-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/de28b292-8ea4-4fff-a55a-e198eb86a1b8.png" alt="Experienced female driver standing proudly next to her clean, well-maintained vehicle" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Meera Krishnan</h3>
+                        <p class="text-pink-600 mb-3">4.8 ★ (1,780 rides)</p>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fas fa-car mr-2"></i>
+                            <span>Maruti Suzuki Ertiga</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Bangalore</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Driver 4 -->
+                <div class="driver-card bg-white rounded-xl shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/df03926a-b8e4-47d9-94aa-c7fb0bf941a1.png" alt="Young female driver in RideHer uniform helping passenger with luggage" class="w-full h-full object-cover"/>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Sneha Gupta</h3>
+                        <p class="text-pink-600 mb-3">4.9 ★ (650 rides)</p>
+                        <div class="flex items-center text-gray-600 mb-3">
+                            <i class="fas fa-car mr-2"></i>
+                            <span>Kia Seltos</span>
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span>Hyderabad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-pink-600 text-pink-600 px-6 py-3 rounded-full font-medium hover:bg-pink-600 hover:text-white transition duration-200">
+                    Meet All Our Drivers
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Covered -->
+    <section id="cities" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Serving Across India</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Available in all major cities and expanding rapidly</p>
+            </div>
+            
+            <!-- Map and City Selector -->
+            <div class="mb-16">
+                <div class="map-container bg-gray-200 relative">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d63edd5e-d5ff-4a57-b310-b14ebdd043d1.png" alt="Map of India highlighting all major cities where RideHer service is available" class="w-full h-full object-cover"/>
+                    
+                    <!-- City Dots - These would be interactive in the actual app -->
+                    <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-pink-600 rounded-full cursor-pointer"></div>
+                    <div class="absolute top-1/3 left-2/4 w-4 h-4 bg-pink-600 rounded-full cursor-pointer"></div>
+                    <div class="absolute top-1/2 left-1/3 w-4 h-4 bg-pink-600 rounded-full cursor-pointer"></div>
+                    <div class="absolute top-2/3 left-3/4 w-4 h-4 bg-pink-600 rounded-full cursor-pointer"></div>
+                    <div class="absolute top-3/4 left-1/5 w-4 h-4 bg-pink-600 rounded-full cursor-pointer"></div>
+                </div>
+            </div>
+            
+            <div class="city-selector grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Mumbai</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Delhi</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Bangalore</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Hyderabad</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Chennai</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Kolkata</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Pune</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Ahmedabad</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Jaipur</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Lucknow</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Chandigarh</h4>
+                </div>
+                <div class="city bg-pink-50 p-4 rounded-lg text-center cursor-pointer">
+                    <h4 class="font-medium">Indore</h4>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Don't see your city? We're expanding quickly!</p>
+                <button class="bg-pink-600 text-white px-6 py-3 rounded-full font-medium hover:bg-pink-700 transition duration-200">
+                    Request RideHer in Your City
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Route Selection -->
+    <section class="py-16 bg-pink-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h2 class="text-3xl font-bold mb-6">Choose Your Perfect Route</h2>
+                    <p class="text-xl mb-8">Our smart routing ensures you take the safest and fastest way to your destination.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-pink-700 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <input type="text" placeholder="Pickup Location" class="flex-1 bg-pink-500 text-white placeholder-pink-200 border border-pink-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-pink-700 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-location-arrow"></i>
+                            </div>
+                            <input type="text" placeholder="Destination" class="flex-1 bg-pink-500 text-white placeholder-pink-200 border border-pink-400 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white">
+                        </div>
+                        <button class="bg-white text-pink-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition duration-200 w-full mt-4">
+                            Find Best Route
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="map-container bg-pink-700">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/192202c0-673f-4315-a24e-b891358a1f17.png" alt="Interactive map showing multiple route options between two points with safety ratings and estimated times" class="w-full h-full object-cover"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Riders Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from women who travel with confidence using RideHer</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8fa87025-c839-4c5f-822b-323ce3972b45.png" alt="Smiling young professional woman in business attire" class="w-full h-full object-cover"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Aditi Banerjee</h4>
+                            <p class="text-pink-600 text-sm">Delhi • Marketing Executive</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"As someone who works late hours, RideHer has given me peace of mind. The emergency features made me feel safe, and my regular driver Reema knows exactly when to pick me up. It's changed my commute completely."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/18b9186d-949f-40d9-b043-8f0657575873.png" alt="Middle-aged woman in traditional Indian attire smiling warmly" class="w-full h-full object-cover"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Meena Iyer</h4>
+                            <p class="text-pink-600 text-sm">Mumbai • College Professor</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    <p class="text-gray-700">"I was hesitant about cab services until I found RideHer. Knowing my daughter's rides are tracked gives me comfort. The monthly subscription saved me time and money for my daily college commute. The drivers are always professional and polite."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-pink-50 p-8 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dc91ec8a-12af-4736-999c-32856f44f69c.png" alt="Young woman in traditional saree with modern styling" class="w-full h-full object-cover"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Divya Reddy</h4>
+                            <p class="text-pink-600 text-sm">Hyderabad • Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-700">"The automatic scheduling is a game-changer! My driver arrives exactly at 8:45 AM every workday without me having to book. When I worked late last week, the emergency contact feature automatically alerted my husband - such peace of mind!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Ready to Ride with Confidence?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Download the RideHer app today and experience safe, comfortable travel on your terms.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white text-pink-600 px-6 py-4 rounded-full font-medium hover:bg-gray-100 transition duration-200 flex items-center justify-center">
+                    <i class="fab fa-apple text-2xl mr-2"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Download on the</div>
+                        <div class="text-lg font-semibold">App Store</div>
+                    </div>
+                </button>
+                <button class="bg-black text-white px-6 py-4 rounded-full font-medium hover:bg-gray-900 transition duration-200 flex items-center justify-center">
+                    <i class="fab fa-google-play text-2xl mr-2"></i>
+                    <div class="text-left">
+                        <div class="text-xs">Get it on</div>
+                        <div class="text-lg font-semibold">Google Play</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-logo text-2xl text-pink-400 font-bold mb-4">RideHer</h3>
+                    <p class="text-gray-400">India's premiere women-only ride service, providing safe transportation with advanced security features.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-gray-400 hover:text-pink-400">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-pink-400">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Safety Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Community Guidelines</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2026 RideHer Technologies Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Emergency Modal (Hidden by default) -->
+    <div id="emergencyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-red-600">Emergency Activated</h3>
+                <button id="closeEmergency" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p class="text-gray-700 mb-6">Your emergency contacts have been notified with your live location and ride details.</p>
+            <div class="bg-red-50 p-4 rounded-lg mb-6">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+                    </div>
+                    <p class="font-medium">Help is on the way. Stay on the line.</p>
+                </div>
+            </div>
+            <button id="cancelEmergency" class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-300 transition duration-200 w-full">
+                Cancel Emergency
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Emergency Button Functionality
+        document.querySelector('.emergency-btn').addEventListener('click', function() {
+            document.getElementById('emergencyModal').classList.remove('hidden');
+            
+            // In a real app, this would trigger actual emergency protocols
+            console.log("Emergency activated - contacts notified with live location");
+        });
+        
+        document.getElementById('closeEmergency').addEventListener('click', function() {
+            document.getElementById('emergencyModal').classList.add('hidden');
+        });
+        
+        document.getElementById('cancelEmergency').addEventListener('click', function() {
+            document.getElementById('emergencyModal').classList.add('hidden');
+            alert("Emergency canceled. Your contacts have been notified that you're safe.");
+        });
+        
+        // Day selection for scheduling
+        document.querySelectorAll('.day-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.classList.contains('bg-gray-100')) {
+                    this.classList.remove('bg-gray-100', 'text-gray-500');
+                    this.classList.add('bg-pink-100', 'text-pink-600');
+                } else {
+                    this.classList.remove('bg-pink-100', 'text-pink-600');
+                    this.classList.add('bg-gray-100', 'text-gray-500');
+                }
+            });
+        });
+        
+        // City selection
+        document.querySelectorAll('.city').forEach(city => {
+            city.addEventListener('click', function() {
+                document.querySelectorAll('.city').forEach(c => {
+                    c.classList.remove('bg-pink-600', 'text-white');
+                });
+                this.classList.add('bg-pink-600', 'text-white');
+                
+                // In a real app, this would filter drivers/map by city
+                console.log(`Selected city: ${this.textContent.trim()}`);
+            });
+        });
+    </script>
+</body>
+</html>
+
