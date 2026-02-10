@@ -104,8 +104,7 @@ This project was created to practice and demonstrate:
 ## 👩‍💻 Author
 
 **Laxmi S**
-BCA Student — Savitribai Phule Pune University
-Aspiring Software Developer
+ Software Developer
 
 ---
 
