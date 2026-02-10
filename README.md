@@ -104,7 +104,7 @@ This project was created to practice and demonstrate:
 ## 👩‍💻 Author
 
 **Laxmi S**
- Software Developer
+  Associate Software Developer.
 
 ---
 
